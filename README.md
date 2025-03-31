@@ -1,0 +1,2 @@
+# splitease
+split expense calculator
