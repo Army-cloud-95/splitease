@@ -4,53 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Split Ease</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="./src/output.css" rel="stylesheet">
-    <script src="script.js" defer></script>
-   
-
-
-
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-<body>
-    <header class="text-center pb-4 bg-blue-300  ">
-        <img width="48" height="48" src="https://img.icons8.com/color/48/transfer-money.png" alt="transfer-money"/>
-        <h1 class="text-5xl pt-5">Split Ease</h1>
-        
-
-        <h6 class="text-3xl p-2 ">“Effortless Expense Splitting”</h6>
-        <p class="text-xl pb-2">Easily split bills with friends!</p>
-        <p class="pb-3">No more confusion, split and settle your expenses instantly</p>
-       
-    </header>
-    <!-- Calculator  -->
-    <div class=" pt-3  flex flex-col items-center justify-center  bg-white  rounded-lg shadow-2xl">
-        <div class="p-3">
-            <label class="pr-2"> Name of the Event </label>
-            <input type="text"  class="border-blue-500 border-2" placeholder=" Enter the Name of the event">
-        </div>
-       
-        <div  class="pb-3">
-            <label  class="pr-2"> Number of people </label>
-              <input  id="numOfPeople"  type="number" class="border-blue-500 border-2" placeholder="Enter the number of people">
-        </div>
-        
-        <div id="inputContainer" class="pb-3">
-
-        </div>
-      
-    </div>
-    <canvas id="expenseChart"></canvas>
-
-
-    <footer class="w-full bg-blue-300 text-center p-3 mt-10 fixed bottom-0 left-0 right-0">
-        Built with ❤️ by Khushi Agrawal<br>
-        No more arguments, just split and chill! 😎
-    </footer>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center" onclick="redirectToHome()">
     
+    <h1 id="title" class="text-5xl font-bold text-blue-600 mt-5">Split Ease</h1>
+    <p id="tagline" class="text-xl text-gray-600 mt-2">Effortless Expense Splitting</p>
+    
+    <div class="relative mt-10">
+        <!-- People Icons -->
+        <div class="absolute top-0 left-0 text-4xl" id="person1">💁‍♂️</div>
+        <div class="absolute top-0 right-0 text-4xl" id="person2">🙋‍♀️</div>
+        <div class="absolute bottom-0 left-1/3 text-4xl" id="person3">🙆</div>
+        <div class="absolute bottom-0 right-1/3 text-4xl" id="person4">🤷‍♂️</div>
+        
+        <div class="absolute text-3xl" id="money1">💰</div>
+        <div class="absolute text-3xl" id="money2">💰</div>
+    </div>
+    
+    <script>
+        function redirectToHome() {
+            window.location.href = "./calculation.html"; 
+        }
+        gsap.from("#title", { opacity: 0, y: -50, duration: 1 });
+        gsap.from("#tagline", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
+        
+        gsap.to("#money1", { x: 100, y: 50, duration: 1.5, repeat: -1, yoyo: true });
+        gsap.to("#money2", { x: -100, y: -50, duration: 1.5, repeat: -1, yoyo: true });
+    </script>
 </body>
 </html>

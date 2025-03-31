@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Ease</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./src/output.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+   
+
+
+
+    
+</head>
+<body>
+    <header class="text-center pb-4 bg-blue-300  ">
+        <img width="48" height="48" src="https://img.icons8.com/color/48/transfer-money.png" alt="transfer-money"/>
+        <h1 class="text-5xl pt-5">Split Ease</h1>
+        
+
+        <h6 class="text-3xl p-2 ">“Effortless Expense Splitting”</h6>
+        <p class="text-xl pb-2">Easily split bills with friends!</p>
+        <p class="pb-3">No more confusion, split and settle your expenses instantly</p>
+       
+    </header>
+    <!-- Calculator  -->
+    <div class=" pt-3  flex flex-col items-center justify-center  bg-white  rounded-lg shadow-2xl">
+        <div class="p-3">
+            <label class="pr-2"> Name of the Event </label>
+            <input type="text"  class="border-blue-500 border-2" placeholder=" Enter the Name of the event">
+        </div>
+       
+        <div  class="pb-3">
+            <label  class="pr-2"> Number of people </label>
+              <input  id="numOfPeople"  type="number" class="border-blue-500 border-2" placeholder="Enter the number of people">
+        </div>
+        
+        <div id="inputContainer" class="pb-3">
+
+        </div>
+      
+    </div>
+    <canvas id="expenseChart"></canvas>
+
+
+    <footer class="w-full bg-blue-300 text-center p-3 mt-10 fixed bottom-0 left-0 right-0">
+        Built with ❤️ by Khushi Agrawal<br>
+        No more arguments, just split and chill! 😎
+    </footer>
+    
+</body>
+</html>
